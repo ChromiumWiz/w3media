@@ -3,20 +3,24 @@ import { Nav, NavItem, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const SNav = styled(Nav)`
-  height: 30px;
-  display: flex;
+  height: 60px;
   position: fixed;
-  top: 15px;
+  top: 0px;
   left: 0px;
+  right: 0px;
+  display: flex;
   flex-direction: row;
-  padding: 10px 15px 10px 15px;
   flex-grow: 1;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  justify-content: left;
+  align-content: center;
+  padding: 0px 15px 0px 15px;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 1px #888;
+  z-index:99;
 `;
 
 export const SNavItem = styled(NavItem)`
-  height: 30px;
+  height: auto;
   width: auto;
   cursor: pointer;
   line-height: 30px;
@@ -27,6 +31,7 @@ export const SNavLink = styled(NavLink)`
     display: flex !important;
     flex-direction: row;
     text-decoration: none;
+    padding: 5px;
 
     hover,
     focus,
@@ -49,11 +54,9 @@ export const NLink = styled(Link)`
 
 export const SNavText = styled.div`
   width: auto;
-  height: 30px;
+  height: 20px;
   display: block;
   padding: 0px 5px;
-  line-height: 30px;
-  font-size: 14px;
   text-decoration: none;
   float: none;
   color: #1a8cd8;

@@ -1,0 +1,15 @@
+const connectToWeb3 = useCallback(async () => {
+        try {
+            // Get network provider and web3 instance.
+            setWeb3(await getWeb3());
+        } catch (error) {
+            alert(`Failed to load web3, accounts, or contract. Check console for details.`);
+            console.error(error);
+        }
+    }, []);
+useEffect(() => {
+        const set = async () => {
+            setAccounts(await web3.eth.getAccounts());
+        };
+        if (web3) set();
+    }, [web3]);

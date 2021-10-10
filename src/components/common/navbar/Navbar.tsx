@@ -6,7 +6,8 @@ import { Link, useHistory } from "react-router-dom";
 import { SNavProps, SNavBarItem, SNavBarItemSub } from "./types";
 
 import { SNav, SNavItem, SNavLink, SNavText, NLink } from "./styles";
-import { NavButton } from "../button";
+import { NavButton, SButtonGroup, LoginButton, SignupButton } from "../button";
+import { HouseFill } from "react-bootstrap-icons";
 
 const Navbar: React.FC<SNavProps> = ({ navData }) => {
   const history = useHistory();
@@ -21,26 +22,36 @@ const Navbar: React.FC<SNavProps> = ({ navData }) => {
         <SNavItem>
           <SNavLink>
             <NLink to={navData.home.link}>
-              <NavButton></NavButton>
-              <SNavText>{navData.home.name}</SNavText>
+              <NavButton>
+                <HouseFill size="20" />
+              </NavButton>
             </NLink>
           </SNavLink>
         </SNavItem>
 
         <SNavItem>
           <SNavLink>
-            <NLink to={navData.login.link}>
-              <NavButton></NavButton>
-              <SNavText>{navData.login.name}</SNavText>
-            </NLink>
+            {/* <NLink to={navData.login.link}>
+              <NavButton>
+                <SNavText>{navData.login.name}</SNavText>
+              </NavButton>
+            </NLink> */}
           </SNavLink>
         </SNavItem>
-
+        {/* 
         <SNavItem>
           <SNavLink>
-            <Link to={navData.profile.link}>{navData.profile.name}</Link>
+            <NLink to={navData.profile.link}>
+              <NavButton>
+                <SNavText>{navData.profile.name}</SNavText>
+              </NavButton>
+            </NLink>
           </SNavLink>
-        </SNavItem>
+        </SNavItem> */}
+        <SButtonGroup>
+          <LoginButton>Login</LoginButton>
+          <SignupButton>Signup</SignupButton>
+        </SButtonGroup>
       </SNav>
     </>
   );
